@@ -64,7 +64,7 @@ class InstallModel extends Model {
             author VARCHAR(255) NOT NULL,
             created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             message TEXT NOT NULL,
-            post_id INT(11) NOT NULL)");
+            post_slug VARCHAR(255) NOT NULL)");
 
         //création la table des tags
         $this->db->execute("CREATE TABLE tags (

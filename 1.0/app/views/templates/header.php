@@ -38,5 +38,5 @@ require_once "app/libs/session.php";
 		
 		<div class="w3-content">		
 			<div class="w3-container w3-center w3-padding-64">
-				<h1 class="w3-xxxlarge"><?=WEB_TITLE?></h1>
+				<h1 class="w3-xxxlarge"><span><?=WEB_TITLE?></span></h1>
 			</div>

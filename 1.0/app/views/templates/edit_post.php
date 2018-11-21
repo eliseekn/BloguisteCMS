@@ -6,7 +6,7 @@
 					<label>Titre</label>
 					<input class="w3-input w3-border w3-section" type="text" name="title" maxlength="255" autofocus="autofocus" required="required" value="<?=$this->view_data['content']->title?>" />
 					<label>Contenu</label>
-					<textarea class="w3-input w3-border w3-section" name="content" style="resize:none" rows="4" cols="10" required="required"><?=$this->view_data['content']->content?></textarea>
+					<textarea class="w3-input w3-border w3-section" name="content" style="resize:none" rows="10" cols="10" required="required"><?=$this->view_data['content']->content?></textarea>
 					<label>Image d'en-tête</label>
 					<input type="file" name="image" class="w3-input w3-border w3-section" />
 					<label>Tags</label>

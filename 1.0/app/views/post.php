@@ -21,7 +21,7 @@
 			?>
 			<div class="w3-card w3-margin">
 				<div class="w3-container">
-					<form action="<?="posts/add_comment/".$this->page_id."/".$this->post_id?>" method="post">
+					<form action="<?="posts/add_comment/".$this->page_id."/".$this->view_data['content']['post']->slug?>" method="post">
 						<input class="w3-input w3-border w3-section" type="text" name="message" required="required" placeholder="Entrer votre commenairet ici"/>
 						<button type="submit" class="w3-button w3-margin-bottom">Ajouter un commentaire</button>
 					</form>

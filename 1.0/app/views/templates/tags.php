@@ -10,7 +10,7 @@
 					<?php foreach ($this->view_data['content'] as $tag) { ?>
 					<tr>
 						<td><?=$tag->name?></td>
-						<td><a href="<?="posts/delete_tag/".$tag->id?>">Supprimer</a></td>
+						<td><a href="<?="dashboard/delete_tag/".$tag->id?>">Supprimer</a></td>
 					</tr>
 					<?php } ?>
 				</table>

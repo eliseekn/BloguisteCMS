@@ -41,10 +41,12 @@ class UsersModel extends Model {
 	}
 	
 	//vérifie qu'un utilisateur existe déjà
-	public function is_exist($username, $email) {
+	public function is_exists($username, $email) {
 		$username = $this->db->escape_string($username);
 		$email = $this->db->escape_string($email);
-		return $this->db->execute("SELECT * FROM users WHERE username='$username' OR email='$email'");
+		$query = $this->db->execute("SELECT * FROM users WHERE username='$username' OR email='$email'");
+		$data = $this->db->fetch($query, MYSQLI_NUM);
+		return $data[0] >= 1 ? true : false;
 	}
 	
 	public function get_all() {

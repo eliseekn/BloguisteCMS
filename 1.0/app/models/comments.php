@@ -33,12 +33,12 @@ class CommentsModel extends Model {
 	}
 	
 	//récupère tous les commentaires de la table
-	public function get_all($post_id = "") {
+	public function get_all($post_slug = "") {
 		$comments = [];
 		
 		if (!empty($post_id)) {
 			$post_id = $this->db->escape_string($post_id);
-			$query = $this->db->execute("SELECT * FROM comments WHERE post_id='$post_id' ORDER BY id DESC");
+			$query = $this->db->execute("SELECT * FROM comments WHERE post_slug='$post_slug' ORDER BY id DESC");
 		} else {
 			$query = $this->db->execute("SELECT * FROM comments ORDER BY id DESC");
 		}
@@ -70,13 +70,13 @@ class CommentsModel extends Model {
 	}
 	
 	//ajoute un commentaire à la table
-	public function add($author, $message, $post_id) {
+	public function add($author, $message, $post_slug) {
 		$author = $this->db->escape_string($author);
 		$message = $this->db->escape_string($message);
-		$post_id = $this->db->escape_string($post_id);
+		$post_slug = $this->db->escape_string($post_slug);
 		
-		return $this->db->execute("INSERT INTO comments (author, message, post_id) 
-			VALUES ('$author', '$message', '$post_id')");
+		return $this->db->execute("INSERT INTO comments (author, message, post_slug) 
+			VALUES ('$author', '$message', '$post_slug')");
 	}
 	
 	//supprime un commentaire de la table

@@ -2,10 +2,10 @@
 	<div class="w3-row w3-margin-top">
 		<div class="w3-col l8 s12">
 		<?php 
-		if (empty($this->view_data['content'])) {
-			echo "<p class=\"w3-center\">No matches results found.</p>";
+		if (empty($this->view_data['content']['post'])) {
+			echo "<p class=\"w3-center\">Aucun résultat n'a été trouvé.</p>";
 		} else {
-			foreach ($this->view_data['content'] as $post) { ?>
+			foreach ($this->view_data['content']['post'] as $post) { ?>
 			<div class="w3-card w3-margin">
 				<div class="w3-container w3-center">
 					<h1><?=htmlspecialchars($post->title)?></h1>

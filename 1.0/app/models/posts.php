@@ -64,6 +64,14 @@ class PostsModel extends Model {
 		}
 	}
 	
+	//vérifie qu'un article existe déjà
+	public function is_exists($slug) {
+		$slug = $this->db->escape_string($slug);
+		$query = $this->db->execute("SELECT * FROM posts WHERE slug='$slug'");
+		$data = $this->db->fetch($query, MYSQLI_NUM);
+		return $data[0] >= 1 ? true : false;
+	}
+	
 	public function add($title, $content, $image, $slug, $tags) {
 		$title = $this->db->escape_string($title);
 		$content = $this->db->escape_string($content);

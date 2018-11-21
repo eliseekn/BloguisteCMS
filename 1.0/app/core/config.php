@@ -23,7 +23,7 @@
  */
 
 //mode développement
-define("DEBUG", true);
+define("DEBUG", false);
 
 //configuration du compte administrateur
 define("ADMIN_USERNAME", "admin");

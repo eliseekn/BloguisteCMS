@@ -60,7 +60,7 @@ class UsersController extends Controller {
 		}
 	}
 	
-	public function register($email, $username, $password) {
+	public function register($username, $email, $password) {
 		$email = trim($email);
 		$username = trim($username);
 		$password = trim($password);

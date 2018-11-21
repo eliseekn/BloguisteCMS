@@ -55,7 +55,7 @@ class DashboardController extends Controller {
 	
 	public function posts($page_id = 1) {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -77,7 +77,7 @@ class DashboardController extends Controller {
 	
 	public function users() {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -93,7 +93,7 @@ class DashboardController extends Controller {
 	
 	public function comments() {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -109,7 +109,7 @@ class DashboardController extends Controller {
 	
 	public function tags() {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -125,7 +125,7 @@ class DashboardController extends Controller {
 	
 	public function add_post() {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -139,12 +139,12 @@ class DashboardController extends Controller {
 	
 	public function edit_post($slug, $page_id) {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
 		$posts_model = new PostsModel();
-		$post = $posts_model->get_post($post_slug);
+		$post = $posts_model->get_post($slug);
 		
 		$this->view->page_id = $page_id;
 		$this->view->post_id = $post->id;
@@ -159,7 +159,7 @@ class DashboardController extends Controller {
 	
 	public function delete_user($user_id) {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		
@@ -171,7 +171,7 @@ class DashboardController extends Controller {
 
 	public function delete_tag($tag_id) {
 		if (!$this->is_connected()) {
-			$this->redirect("login/index");
+			$this->redirect("users/index");
 			exit();
 		}
 		

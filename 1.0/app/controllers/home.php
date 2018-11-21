@@ -25,7 +25,6 @@
 require_once "app/core/controller.php";
 require_once "app/models/posts.php";
 require_once "app/models/tags.php";
-require_once "app/models/comments.php";
 require_once "app/libs/pagination.php";
 require_once "app/core/config.php";
 
@@ -38,7 +37,6 @@ class HomeController extends Controller {
 	
 	public function index($page_id = 1) {
 		$posts_model = new PostsModel();
-		$comments_model = new CommentsModel();
 		$tags_model = new TagsModel();
 
 		$pagination = new Pagination($page_id, $posts_model->get_count());

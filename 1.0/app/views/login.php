@@ -27,7 +27,7 @@
 				</form>
 
 				<div class="w3-container">
-					Pas de compte, <a href="users/index/register" class="w3-bar-item w3-button">Inscrivez-vous</a>
+					Pas de compte? <a href="users/index/register" class="w3-bar-item w3-button">Inscrivez-vous</a>
 				</div>
 			</div>
 		</div>

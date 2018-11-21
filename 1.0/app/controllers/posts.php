@@ -51,7 +51,7 @@ class PostsController extends Controller {
 				"title" => WEB_TITLE,
 				"content" => [
 					"post" => $post,
-					"comments" => $comments_model->get_all($post->id),
+					"comments" => $comments_model->get_all($post_slug),
 					"tags" => $tags_model->get_all()
 				]
 			]
@@ -62,25 +62,30 @@ class PostsController extends Controller {
 		$image = "None";
 		$slug = Utils::generate_slug($title);
 		$tags = str_replace(" ", "", $tags);
+
+		$posts_model = new PostsModel();
 		
-		if (!empty($_FILES['image']['name'])) {
+		if ($posts_model->is_exists($slug)) {
+            echo "<p>Failed to add post, this post already exists.</p>";
+        } else {
+            if (!empty($_FILES['image']['name'])) {
 			$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
 			move_uploaded_file($_FILES['image']['tmp_name'], $image);
-		}
-		
-		$posts_model = new PostsModel();
-		$posts_model->add($title, $content, $image, $slug, $tags);
+			}
+			
+			$posts_model->add($title, $content, $image, $slug, $tags);
 
-		$tags_model = new TagsModel();
-		$tags = explode(",", $tags);
+			$tags_model = new TagsModel();
+			$tags = explode(",", $tags);
 
-		foreach ($tags as $tag) {
-			if (!$tags_model->is_exists($tag)) {
-                $tags_model->add($tag);
-            }
+			foreach ($tags as $tag) {
+				if (!$tags_model->is_exists($tag)) {
+					$tags_model->add($tag);
+				}
+			}
+
+			$this->redirect("dashboard/posts");
 		}
-		
-		$this->redirect("dashboard/posts");
 	}
 	
 	public function edit_post($post_id, $page_id, $title, $content, $tags) {
@@ -108,7 +113,7 @@ class PostsController extends Controller {
 		$this->redirect("dashboard/posts/$page_id");
 	}
 	
-	public function add_comment($post_id, $post_slug, $message) {
+	public function add_comment($page_id, $post_slug, $message) {
 		SESSION::start();
 		
 		$user = SESSION::get_item("user");
@@ -118,14 +123,10 @@ class PostsController extends Controller {
 			$author .= " (Administrator)";
 		}
 		
-		$posts_model = new PostsModel();
 		$comments_model = new CommentsModel();
-
-		$post = $posts_model->get_post($post_slug);
-		$comments_model->add($author, $message, $post->id);
+		$comments_model->add($author, $message, $post_slug);
 		
-		
-		$this->redirect("posts/index/".$page_id."/".$post->id);
+		$this->redirect("posts/index/".$page_id."/".$post_slug);
 	}
 	
 	public function delete_post($post_id, $page_id) {

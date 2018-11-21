@@ -48,7 +48,9 @@ class TagsModel extends Model {
 	//vérifie qu'un tag existe déjà
 	public function is_exists($tag) {
 		$tag = $this->db->escape_string($tag);
-		return $this->db->execute("SELECT * FROM tags WHERE name='$tag'");
+		$query = $this->db->execute("SELECT * FROM tags WHERE name='$tag'");
+		$data = $this->db->fetch($query, MYSQLI_NUM);
+		return $data[0] >= 1 ? true : false;
 	}
 	
 	//ajoute un tag à la table
