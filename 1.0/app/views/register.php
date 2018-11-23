@@ -13,6 +13,8 @@
 		
 		<link rel="stylesheet" href="layout/libs/css/w3.css" />
 		<link rel="stylesheet" href="layout/libs/css/fontawesome.css" />
+
+		<script type="text/javascript" src="layout/libs/js/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -20,13 +22,15 @@
 			<div class="w3-display-topmiddle w3-center">
 				<h1 class="w3-xxlarge"><i class="fa fa-user"></i> Inscription</h1>
 				
-				<form action="users/register" method="post">
-					<input class="w3-input w3-border w3-section" type="text" name="username" maxlength="20" autofocus="autofocus" placeholder="Nom d'utilisateur" required="required" />
-					<input class="w3-input w3-border w3-section" type="email" name="email" maxlength="255" placeholder="Email" required="required" />
-					<input class="w3-input w3-border w3-section" type="password" name="password" maxlength="10" placeholder="Mot de passe" required="required" />
-					<button type="submit" class="w3-button">S'inscrire</button>
+				<form id="register_form">
+					<input class="w3-input w3-border w3-section" type="text" name="username" id="username" maxlength="20" autofocus="autofocus" placeholder="Nom d'utilisateur" required="required" />
+					<input class="w3-input w3-border w3-section" type="email" name="email" id="email" maxlength="255" placeholder="Email" required="required" />
+					<input class="w3-input w3-border w3-section" type="password" name="password" id="password" maxlength="10" placeholder="Mot de passe" required="required" />
+					<input type="submit" class="w3-button" value="S'inscrire">
 				</form>
 			</div>
 		</div>
+
+		<script type="text/javascript" src="layout/assets/js/script.js"></script>
 	</body>
 </html>

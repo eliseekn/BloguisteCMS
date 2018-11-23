@@ -80,7 +80,7 @@ class Application {
 				$this->params[] = $value;
 			}
 		}
-				
+
 		//exécution de la classe du controlleur avec tous les paramètres
 		call_user_func_array([$this->controller, $this->action], $this->params);
 	}

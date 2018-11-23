@@ -66,7 +66,7 @@ class PostsController extends Controller {
 		$posts_model = new PostsModel();
 		
 		if ($posts_model->is_exists($slug)) {
-            echo "<p>Failed to add post, this post already exists.</p>";
+            echo "failed";
         } else {
             if (!empty($_FILES['image']['name'])) {
 			$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
@@ -84,7 +84,7 @@ class PostsController extends Controller {
 				}
 			}
 
-			$this->redirect("dashboard/posts");
+			echo "succeed";
 		}
 	}
 	

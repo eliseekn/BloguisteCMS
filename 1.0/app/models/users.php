@@ -37,7 +37,9 @@ class UsersModel extends Model {
 	public function login($username, $password) {
 		$username = $this->db->escape_string($username);
 		$password = $this->db->escape_string($password);
-		return $this->db->execute("SELECT * FROM users WHERE username='$username' AND password='$password'");
+		$query = $this->db->execute("SELECT * FROM users WHERE username='$username' AND password='$password'");
+		$data = $this->db->fetch($query, MYSQLI_NUM);
+		return $data[0] >= 1 ? true : false;
 	}
 	
 	//vérifie qu'un utilisateur existe déjà

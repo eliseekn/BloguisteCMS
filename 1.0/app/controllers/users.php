@@ -42,21 +42,17 @@ class UsersController extends Controller {
 		$password = trim($password);
 
 		$users_model = new UsersModel();
-		//$password = $users_model->hash($password); //décommenter cette ligne pour crypter/décrypter les mots de passe des utilisateurs 
+		$password = $users_model->hash($password);
 		
-		if ($users_model->login($username, $password)) {
+		if (!$users_model->login($username, $password)) {
+			echo "failed";
+		} else {
 			$user = $users_model->get_user_by_username($username);
 			
 			SESSION::start();
 			SESSION::set_item(["user" => $user]);
-			
-			if ($user->privileges == "admin") {
-				$this->redirect("dashboard/posts");
-			} else {
-				$this->redirect("home/index");
-			}
-		} else {
-			echo "<p>Login failed, incorrect id and/or password.</p>";
+
+			echo "succeed";
 		}
 	}
 	
@@ -68,17 +64,17 @@ class UsersController extends Controller {
 		$users_model = new UsersModel();
         
         if ($users_model->is_exists($username, $email)) {
-            echo "<p>Registration failed, this account already exists.</p>";
+            echo "exists";
         } else {
-            //$password = $users_model->hash($password); //décommenter cette ligne pour crypter/décrypter les mots de passe des utilisateurs
+            $password = $users_model->hash($password);
 
             if ($users_model->add($email, $username, $password)) {
                 SESSION::start();
                 SESSION::set_item(["user" => $users_model->get_user_by_username($username)]);
 
-                $this->redirect("home/index");
+                echo "succeed";
             } else {
-                echo "<p>Registration failed, please check your informations and try again.</p>";
+                echo "failed";
             }
         }
 	}

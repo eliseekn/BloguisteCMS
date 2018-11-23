@@ -73,6 +73,6 @@ class InstallModel extends Model {
 
         //ajout du compte administrateur à la base de données
         $this->db->execute("INSERT INTO users (email, username, password, privileges) VALUES (
-            '" . ADMIN_EMAIL . "', '". ADMIN_USERNAME ."', '". ADMIN_PASSWORD ."', 'admin')");
+            '" . ADMIN_EMAIL . "', '". ADMIN_USERNAME ."', '". $this->hash(ADMIN_PASSWORD) ."', 'admin')");
 	}
 }

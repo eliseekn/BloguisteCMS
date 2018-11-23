@@ -32,5 +32,6 @@
 		<p>Copytright &copy; 2018, Tous droits réservés.</p> 
 		<p>Powered by <a href="https://eliseekn.wordpress.com/" target="_blank">eliseekn</a></p>
 	</footer>
+	
 	</body>
 </html>

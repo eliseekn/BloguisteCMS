@@ -13,6 +13,8 @@ require_once "app/libs/session.php";
 		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,inital-scale=1" />
+
+		<link rel="shortcut icon" href="layout/assets/img/favicon.ico" type="image/x-icon">
 		
 		<link rel="stylesheet" href="layout/libs/css/w3.css" />
 		<link rel="stylesheet" href="layout/libs/css/fontawesome.css" />

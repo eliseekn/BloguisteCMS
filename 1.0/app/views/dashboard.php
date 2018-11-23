@@ -13,6 +13,8 @@
 		
 		<link rel="stylesheet" href="layout/libs/css/w3.css" />
 		<link rel="stylesheet" href="layout/libs/css/fontawesome.css" />
+
+		<script type="text/javascript" src="layout/libs/js/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -51,5 +53,7 @@
 				}
 				?>
 		</div>
+
+		<script type="text/javascript" src="layout/assets/js/script.js"></script>
 	</body>
 </html>
