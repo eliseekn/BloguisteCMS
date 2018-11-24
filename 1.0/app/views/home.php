@@ -1,5 +1,5 @@
 <?php require_once "templates/header.php"; ?>
-	<div class="w3-row w3-margin-top">
+	<div class="w3-row">
 		<div class="w3-col l8 s12">
 		<?php foreach ($this->view_data['content']['post'] as $post) { ?>
 			<div class="w3-card w3-margin">
@@ -22,7 +22,7 @@
 		<?php } ?>
 			<div class="w3-container w3-center">
 				<?php if ($this->page_id == 1) { ?>
-				<a class="w3-button w3-disabled">«</a>
+				<a class="w3-button w3-disabled button">«</a>
 				<?php } else {?>
 				<a href="<?="home/index/".($this->page_id - 1)?>" class="w3-button">«</a>
 				<?php } ?>
@@ -30,7 +30,7 @@
 				Page <?=$this->page_id?> sur <?=$this->total_pages?>
 				
 				<?php if ($this->page_id == $this->total_pages) { ?>
-				<a class="w3-button w3-disabled">»</a>
+				<a class="w3-button w3-disabled button">»</a>
 				<?php } else {?>
 				<a href="<?="home/index/".($this->page_id + 1)?>" class="w3-button">»</a>
 				<?php } ?>

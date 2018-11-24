@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="layout/libs/css/w3.css" />
 		<link rel="stylesheet" href="layout/libs/css/fontawesome.css" />
 
+		<link rel="stylesheet" href="layout/assets/css/dist/style.min.css" />
+		
 		<script type="text/javascript" src="layout/libs/js/jquery.min.js"></script>
 	</head>
 	
@@ -34,6 +36,6 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="layout/assets/js/script.js"></script>
+		<script type="text/javascript" src="layout/assets/js/dist/script.min.js"></script>
 	</body>
 </html>
