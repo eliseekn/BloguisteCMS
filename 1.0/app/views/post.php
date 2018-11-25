@@ -11,7 +11,7 @@
 					<?php if ($this->view_data['content']['post']->image != "None") { ?> 
 					<p><img src="<?=$this->view_data['content']['post']->image?>" style="width:100%"></p>
 					<?php } ?>
-					<p class="w3-justify"><?=htmlspecialchars($this->view_data['content']['post']->content)?></p>
+					<p class="w3-justify"><?=htmlspecialchars_decode($this->view_data['content']['post']->content)?></p>
 				</div>
 			</div>
 			

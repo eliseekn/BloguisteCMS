@@ -12,7 +12,7 @@
 					<?php if ($post->image != "None") { ?> 
 					<p><img src="<?=$post->image?>" style="width:100%;height:300px"></p>
 					<?php } ?>
-					<p class="w3-justify"><?=nl2br(htmlspecialchars(mb_strimwidth($post->content, 0, 400, ' [...]')))?></p>
+					<p class="w3-justify"><?=nl2br(htmlspecialchars_decode(mb_strimwidth($post->content, 0, 400, ' [...]')))?></p>
 				</div>
 				
 				<div class="w3-container">

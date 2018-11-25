@@ -16,7 +16,7 @@
 					<?php foreach ($this->view_data['content'] as $post) { ?>
 					<tr>
 						<td><?=$post->title?></td>
-						<td><?=nl2br(htmlspecialchars(mb_strimwidth($post->content, 0, 50, ' [...]')))?></td>
+						<td><?=nl2br(mb_strimwidth($post->content, 0, 80, ' [...]'))?></td>
 						<td><?=$post->created?></td>
 						<td><?=$post->tags?></td>
 						<td><a href="<?="dashboard/edit_post/".$post->slug."/".$this->page_id?>">Modifier</a></td>

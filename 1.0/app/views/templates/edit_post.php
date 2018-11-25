@@ -2,7 +2,7 @@
 			</div>
 			
 			<div class="w3-container">		
-				<form action="<?="posts/edit_post/".$this->post_id."/".$this->page_id?>" method="post" enctype="multipart/form-data">
+				<form id="edit_post_form" action="<?="posts/edit_post/".$this->post_id."/".$this->page_id?>" method="post" enctype="multipart/form-data">
 					<label>Titre</label>
 					<input class="w3-input w3-border w3-section" type="text" name="title" maxlength="255" autofocus="autofocus" required="required" value="<?=$this->view_data['content']->title?>" />
 					<label>Contenu</label>

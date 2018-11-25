@@ -20,7 +20,7 @@
 	</head>
 	
 	<body>
-		<div class="w3-sidebar w3-bar-block w3-container w3-card" style="width:20%">
+		<div class="w3-sidebar w3-bar-block w3-container w3-card" style="width:15%">
 			<h3><span class="w3-tag"><?= WEB_TITLE ?></span></h3>
 			
 			<div class="w3-container">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		
-		<div style="margin-left:20%">
+		<div style="margin-left:15%">
 			<div class="w3-display-container w3-center w3-padding-64">
 				<h1 class="w3-xxxlarge">Tableau de bord</h1>
 				<br>

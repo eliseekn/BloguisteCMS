@@ -73,7 +73,7 @@ class PostsController extends Controller {
 			move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
-			$posts_model->add($title, $content, $image, $slug, $tags);
+			$posts_model->add($title, htmlspecialchars($content), $image, $slug, $tags);
 
 			$tags_model = new TagsModel();
 			$tags = explode(",", $tags);
@@ -99,7 +99,7 @@ class PostsController extends Controller {
 		}
 		
 		$posts_model = new PostsModel();
-		$posts_model->edit($post_id, $title, $content, $image, $slug, $tags);
+		$posts_model->edit($post_id, $title, htmlspecialchars($content), $image, $slug, $tags);
         
         $tags_model = new TagsModel();
 		$tags = explode(",", $tags);

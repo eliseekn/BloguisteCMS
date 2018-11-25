@@ -69,8 +69,8 @@ $(document).ready(function() {
 		});
 	});
 
-	//validation d'un article pour la création
-	$("#post_form").submit(function(e) {
+	//validation d'un article pour la création d'un article
+	$("#add_post_form").submit(function(e) {
 		e.preventDefault();
 
 		$.ajax ({
@@ -80,8 +80,8 @@ $(document).ready(function() {
             contentType: false,
             cache: false,
             processData:false,
-			success: function(resp) {
-				if(resp == "failed") {
+			success: function(add_post) {
+				if(add_post == "failed") {
 					alert("Cet article existe déjà.");
 				} else {
 					alert("Nouvel article ajouté avec succès.");

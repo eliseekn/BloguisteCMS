@@ -2,7 +2,7 @@
 			</div>
 			
 			<div class="w3-container">			
-				<form id="post_form" enctype="multipart/form-data">
+				<form id="add_post_form" enctype="multipart/form-data">
 					<label>Titre</label>
 					<input class="w3-input w3-border w3-section" type="text" name="title" id="title" maxlength="255" autofocus="autofocus" required="required" />
 					<label>Contenu</label>
