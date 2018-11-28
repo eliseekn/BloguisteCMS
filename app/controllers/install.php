@@ -11,10 +11,9 @@ require_once "app/models/install.php";
     
     public function index() {
         //installation de la base donnée via le modèle
-        $install_model = new InstallModel;
-        $install_model->install();
+        InstallModel::install();
 
-        //connexion au tableau de bord
+        //redirection à la page de connexion
         $this->redirect("users/index");
 	}
  }
