@@ -1,7 +1,7 @@
 {
   "name": "BloguisteCMS",
   "version": "1.0.0",
-  "description": "Un CMS basée sur un framework PHP pour la création de blog",
+  "description": "Un CMS basé sur un framework PHP pour la création de blog",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,7 @@
     "PHP"
   ],
   "author": "N'Guessan Kouadio Elisée AKA eliseekn",
-  "license": "",
+  "license": "MIT",
   "homepage": "https://bitbucket.org/eliseekn/bloguistecms#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
