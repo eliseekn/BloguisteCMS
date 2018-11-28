@@ -1,14 +1,14 @@
 {
-  "name": "bloguiste",
+  "name": "BloguisteCMS",
   "version": "1.0.0",
-  "description": "Un framework PHP pour la création de blog",
+  "description": "Un CMS basée sur un framework PHP pour la création de blog",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://eliseekn@bitbucket.org/eliseekn/bloguiste.git"
+    "url": "git+https://eliseekn@bitbucket.org/eliseekn/bloguistecms.git"
   },
   "keywords": [
     "blog",
@@ -18,7 +18,7 @@
   ],
   "author": "N'Guessan Kouadio Elisée AKA eliseekn",
   "license": "",
-  "homepage": "https://bitbucket.org/eliseekn/bloguiste#readme",
+  "homepage": "https://bitbucket.org/eliseekn/bloguistecms#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-rename": "^1.4.0",
