@@ -70,6 +70,8 @@ class PostsController extends Controller {
 		$slug = Utils::generate_slug($title);
 		$tags = str_replace(" ", "", $tags);
 		
+		$posts_model = new PostsModel();
+
 		if ($posts_model->is_exists($slug)) {
             echo "failed";
         } else {
@@ -78,7 +80,6 @@ class PostsController extends Controller {
 				move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
-			$posts_model = new PostsModel();
 			$posts_model->edit($post_id, $title, htmlspecialchars($content), $image, $slug, $tags);
 			
 			$tags_model = new TagsModel();
