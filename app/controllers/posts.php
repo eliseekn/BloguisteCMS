@@ -46,7 +46,7 @@ class PostsController extends Controller {
             echo "failed";
         } else {
             if (!empty($_FILES['image']['name'])) {
-				$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
+				$image = "public/img/".basename($_FILES['image']['name']);
 				move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
@@ -74,7 +74,7 @@ class PostsController extends Controller {
             echo "failed";
         } else {
             if (!empty($_FILES['image']['name'])) {
-				$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
+				$image = "public/img/".basename($_FILES['image']['name']);
 				move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
