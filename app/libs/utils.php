@@ -1,6 +1,6 @@
 <?php
+
 abstract class Utils {
-	
 	//génère un slug pour les pages des articles
 	public function generate_slug($slug) {
 

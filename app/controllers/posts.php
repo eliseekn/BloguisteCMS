@@ -46,8 +46,8 @@ class PostsController extends Controller {
             echo "failed";
         } else {
             if (!empty($_FILES['image']['name'])) {
-			$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
-			move_uploaded_file($_FILES['image']['tmp_name'], $image);
+				$image = "layout/assets/img/posts/".basename($_FILES['image']['name']);
+				move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
 			$posts_model->add($title, htmlspecialchars($content), $image, $slug, $tags);
