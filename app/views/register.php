@@ -27,8 +27,8 @@
 				
 				<form id="register_form">
 					<input class="w3-input w3-border w3-section" type="text" name="username" id="username" maxlength="20" autofocus="autofocus" placeholder="Nom d'utilisateur" required="required">
-					<input class="w3-input w3-border w3-section" type="email" name="email" id="email" maxlength="255" placeholder="Email" required="required">
-					<input class="w3-input w3-border w3-section" type="password" name="password" id="password" maxlength="10" placeholder="Mot de passe" required="required">
+					<input class="w3-input w3-border w3-section" type="email" name="email" id="email" maxlength="50" placeholder="Email" required="required">
+					<input class="w3-input w3-border w3-section" type="password" name="password" id="password" maxlength="20" placeholder="Mot de passe" required="required">
 					<button type="submit" class="w3-button"><i class="fa fa-sign-in"></i> S'inscrire</button>
 				</form>
 			</div>

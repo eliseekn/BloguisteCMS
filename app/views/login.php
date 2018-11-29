@@ -26,8 +26,8 @@
 				<h1 class="w3-xxlarge"><i class="fa fa-user"></i> Connexion</h1>
 				
 				<form id="login_form">
-					<input class="w3-input w3-border w3-section" type="text" name="username" id="username" maxlength="50" autofocus="autofocus" placeholder="Nom d'utilisateur" required="required">
-					<input class="w3-input w3-border w3-section" type="password" name="password" id="password" maxlength="10" placeholder="Mot de passe" required="required">
+					<input class="w3-input w3-border w3-section" type="text" name="username" id="username" maxlength="20" autofocus="autofocus" placeholder="Nom d'utilisateur" required="required">
+					<input class="w3-input w3-border w3-section" type="password" name="password" id="password" maxlength="20" placeholder="Mot de passe" required="required">
 					<button type="submit" class="w3-button"><i class="fa fa-sign-in"></i> Se connecter</button>
 				</form>
 
