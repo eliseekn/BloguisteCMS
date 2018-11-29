@@ -3,9 +3,9 @@
 define("DEBUG", false);
 
 //configuration du compte administrateur
-define("ADMIN_USERNAME", "admin");
-define("ADMIN_PASSWORD", "admin");
-define("ADMIN_EMAIL", "admin@mail.com");
+define("ADMIN_USERNAME", "eliseekn");
+define("ADMIN_PASSWORD", "eliseekn12345");
+define("ADMIN_EMAIL", "eliseekn@gmail.com");
 
 //configuration du blog
 define("WEB_ROOT", "/bloguistecms");
