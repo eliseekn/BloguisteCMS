@@ -34,6 +34,6 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="layout/assets/js/script.js"></script>
+		<script type="text/javascript" src="layout/assets/js/dist/script.min.js"></script>
 	</body>
 </html>
