@@ -46,7 +46,7 @@ class PostsController extends Controller {
             echo "failed";
         } else {
             if (!empty($_FILES['image']['name'])) {
-				$image = "public/img/".basename($_FILES['image']['name']);
+				$image = "public/assets/img/".basename($_FILES['image']['name']);
 				move_uploaded_file($_FILES['image']['tmp_name'], $image);
 			}
 			
@@ -72,26 +72,20 @@ class PostsController extends Controller {
 		
 		$posts_model = new PostsModel();
 
-		if ($posts_model->is_exists($slug)) {
-            echo "failed";
-        } else {
-            if (!empty($_FILES['image']['name'])) {
-				$image = "public/img/".basename($_FILES['image']['name']);
-				move_uploaded_file($_FILES['image']['tmp_name'], $image);
+		if (!empty($_FILES['image']['name'])) {
+			$image = "public/assets/img/".basename($_FILES['image']['name']);
+			move_uploaded_file($_FILES['image']['tmp_name'], $image);
+		}
+			
+		$posts_model->edit($post_id, $title, htmlspecialchars($content), $image, $slug, $tags);
+			
+		$tags_model = new TagsModel();
+		$tags = explode(",", $tags);
+			
+		foreach ($tags as $tag) {
+			if (!$tags_model->is_exists($tag)) {
+				$tags_model->add($tag);
 			}
-			
-			$posts_model->edit($post_id, $title, htmlspecialchars($content), $image, $slug, $tags);
-			
-			$tags_model = new TagsModel();
-			$tags = explode(",", $tags);
-			
-			foreach ($tags as $tag) {
-				if (!$tags_model->is_exists($tag)) {
-					$tags_model->add($tag);
-				}
-			}
-			
-			echo "succeed";
 		}
 	}
 	
@@ -102,11 +96,13 @@ class PostsController extends Controller {
 		$author = $user->username;
 		
 		if ($user->privileges == "admin") {
-			$author .= " (Administrator)";
+			$author .= " (Administrateur)";
 		}
 		
 		$comments_model = new CommentsModel();
 		$comments_model->add($author, $message, $post_slug);
+
+		$this->update_comments($post_slug);
 		
 		$this->redirect("posts/index/".$page_id."/".$post_slug);
 	}
@@ -118,8 +114,8 @@ class PostsController extends Controller {
 		$posts_model->delete($post_id);
 		$image = $post->image;
 		
-		if ($image != "None") {
-			unlink(WEB_ROOT."/".$image);
+		if ($image !== "None") {
+			unlink("/".WEB_ROOT."/".$image);
 		}
 		
 		$this->redirect("dashboard/posts/$page_id");
@@ -128,5 +124,15 @@ class PostsController extends Controller {
 	public function delete_comment($comment_id) {
 		$comments_model = new CommentsModel();
 		$comments_model->delete($comment_id);
+	}
+
+	public function update_views($slug) {
+		$posts_model = new PostsModel();
+		$posts_model->update_views($slug);
+	}
+
+	public function update_comments($slug) {
+		$posts_model = new PostsModel();
+		$posts_model->update_comments($slug);
 	}
 }

@@ -4,7 +4,8 @@
 			<div class="w3-card w3-margin">
 				<div class="w3-container w3-center">
 					<h1><?=$this->view_data['content']['post']->title?></h1>
-					<h5 class="w3-opacity"><?=$this->view_data['content']['post']->created?></h5>
+					<span class="w3-opacity">
+					Publié le <?=date("d/m/Y", $this->view_data['content']['post']->created)?> à <?=date("H:i", $this->view_data['content']['post']->created)?></span>
 				</div>
 				
 				<div class="w3-container">
@@ -22,7 +23,7 @@
 			<div class="w3-card w3-margin">
 				<div class="w3-container">
 					<form action="<?="posts/add_comment/".$this->page_id."/".$this->view_data['content']['post']->slug?>" method="post">
-						<input class="w3-input w3-border w3-section" type="text" name="message" required="required" placeholder="Entrer votre commenairet ici"/>
+						<input class="w3-input w3-border w3-section" type="text" name="message" required="required" placeholder="Entrez votre commentaire ici"/>
 						<button type="submit" class="w3-button w3-margin-bottom">Ajouter un commentaire</button>
 					</form>
 				</div>
@@ -36,7 +37,7 @@
 					</div>
 					<?php foreach ($this->view_data['content']['comments'] as $comment) { ?>
 						<hr>
-						<p><strong><?=$comment->author?></strong> <span class="w3-opacity w3-right"><?=$comment->created?></span></p>
+						<p><strong><?=$comment->author?></strong> <span class="w3-opacity w3-right">Publié le <?=date("d/m/Y", $comment->created)?> à <?=date("H:i", $comment->created)?></span></p>
 						<p class="w3-margin-left"><?=$comment->message?></p>
 					<?php } ?>
 				</div>

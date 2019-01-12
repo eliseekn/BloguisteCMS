@@ -22,6 +22,11 @@ class TagsModel extends Model {
 		return $tags;
 	}
 
+	//récupère le nombre de commentaire pour un article ou plusieurs
+	public function get_count() {
+		return $this->db->count("SELECT * FROM tags");
+	}
+	
 	//vérifie qu'un tag existe déjà
 	public function is_exists($tag) {
 		$tag = $this->db->escape_string($tag);

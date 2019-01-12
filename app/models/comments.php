@@ -37,10 +37,10 @@ class CommentsModel extends Model {
 	}
 	
 	//récupère le nombre de commentaire pour un article ou plusieurs
-	public function get_count($post_id = "") {
-		if (!empty($post_id)) {
-			$post_id = $this->db->escape_string($post_id);
-			return $this->db->count("SELECT * FROM comments WHERE post_id='$post_id'");
+	public function get_count($slug = "") {
+		if (!empty($slug)) {
+			$slug = $this->db->escape_string($slug);
+			return $this->db->count("SELECT * FROM comments WHERE slug='$slug'");
 		} else {
 			return $this->db->count("SELECT * FROM comments");
 		}
@@ -51,9 +51,10 @@ class CommentsModel extends Model {
 		$author = $this->db->escape_string($author);
 		$message = $this->db->escape_string($message);
 		$post_slug = $this->db->escape_string($post_slug);
+		$created = time(); //current timestamp
 		
-		return $this->db->execute("INSERT INTO comments (author, message, post_slug) 
-			VALUES ('$author', '$message', '$post_slug')");
+		return $this->db->execute("INSERT INTO comments (author, created, message, post_slug) 
+			VALUES ('$author', '$created', '$message', '$post_slug')");
 	}
 	
 	//supprime un commentaire de la table

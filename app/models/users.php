@@ -61,8 +61,10 @@ class UsersModel extends Model {
 		$email = $this->db->escape_string($email);
 		$username = $this->db->escape_string($username);
 		$password = $this->db->escape_string($password);
-		return $this->db->execute("INSERT INTO users (email, username, password)
-			VALUES ('$email', '$username', '$password')");
+		$created = time(); //current timestamp
+
+		return $this->db->execute("INSERT INTO users (created, email, username, password)
+			VALUES ('$created', '$email', '$username', '$password')");
 	}
 	
 	public function delete($id) {

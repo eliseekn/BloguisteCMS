@@ -46,7 +46,10 @@ class DashboardController extends Controller {
 		
 		$this->view->render("dashboard", [
 				"title" => WEB_TITLE . " - Tableau de bord",
-				"content" => $posts_model->get_all($this->view->first_post, $this->view->posts_per_pages),
+				"content" => [
+					"posts" => $posts_model->get_all($this->view->first_post, $this->view->posts_per_pages),
+					"posts_count" => $posts_model->get_count()
+				],
 				"action" => "posts"
 			]
 		);
@@ -62,7 +65,10 @@ class DashboardController extends Controller {
 		
 		$this->view->render("dashboard", [
 				"title" => WEB_TITLE . " - Tableau de bord",
-				"content" => $users_model->get_all(),
+				"content" => [
+					"users" => $users_model->get_all(),
+					"users_count" => $users_model->get_count() - 1
+				],
 				"action" => "users"
 			]
 		);
@@ -78,7 +84,10 @@ class DashboardController extends Controller {
 		
 		$this->view->render("dashboard", [
 				"title" => WEB_TITLE . " - Tableau de bord",
-				"content" => $comments_model->get_all(),
+				"content" => [
+					"comments" => $comments_model->get_all(),
+					"comments_count" => $comments_model->get_count(),
+				],
 				"action" => "comments"
 			]
 		);
@@ -94,8 +103,25 @@ class DashboardController extends Controller {
 		
 		$this->view->render("dashboard", [
 				"title" => WEB_TITLE . " - Tableau de bord",
-				"content" => $tags_model->get_all(),
+				"content" => [
+					"tags" => $tags_model->get_all(),
+					"tags_count" => $tags_model->get_count()
+				],
 				"action" => "tags"
+			]
+		);
+	}
+	
+	public function settings() {
+		if (!$this->is_connected()) {
+			$this->redirect("users/index");
+			exit();
+		}
+		
+		$this->view->render("dashboard", [
+				"title" => WEB_TITLE . " - Tableau de bord",
+				"content" => "",
+				"action" => "settings"
 			]
 		);
 	}

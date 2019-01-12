@@ -9,6 +9,8 @@ class Post {
 	public $slug;
 	public $tags;
 	public $title;
+	public $views;
+	public $comments;
 	
 	public function __construct($data) {
 		$this->id = $data['id'];
@@ -18,6 +20,8 @@ class Post {
 		$this->slug = $data['slug'];
 		$this->tags = $data['tags'];
 		$this->title = $data['title'];
+		$this->views = $data['views'];
+		$this->comments = $data['comments'];
 	}
 }
 

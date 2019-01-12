@@ -9,14 +9,18 @@ require_once "app/libs/session.php";
 	<head>
 		<title><?=$this->view_data['title']?></title>
 		
-		<base href="<?=WEB_ROOT."/"?>">
+		<base href="<?="/". WEB_ROOT."/"?>">
 		
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,inital-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<link rel="stylesheet" href="layout/libs/css/w3.css">
-		<link rel="stylesheet" href="layout/libs/css/fontawesome.css">
-		<link rel="stylesheet" href="layout/assets/css/dist/style.min.css">
+		<link rel="icon" href="public/assets/img/favicon.ico">
+
+		<link rel="stylesheet" href="public/libs/css/w3.css">
+		<link rel="stylesheet" href="public/libs/css/fontawesome.min.css">
+		<link rel="stylesheet" href="public/assets/css/dist/style.min.css">
+		
+		<script type="text/javascript" src="public/libs/js/jquery.min.js"></script>
 	</head>
 	
 	<body>

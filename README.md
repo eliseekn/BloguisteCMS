@@ -1,6 +1,6 @@
 # BloguisteCMS
 
-**BloguisteCMS** est un CMS basé sur un framework PHP pour la création de blog
+**BloguisteCMS** est un CMS spécialisé dans la création de blog.
 
 ## Prérequis
 
@@ -23,15 +23,13 @@
 
 ## Installation
 
-### 1. Clonez ou téléchargez le dépôt officiel du projet [Bitbucket](https://bitbucket.org/eliseekn/bloguistecms)
-### 2. Modifiez le fichier de configuraticon situé dans le dossier ***"app/core***" du dossier projet
-### 3. Créez le répertoire ***"public/img"*** à l'intérieur du dossier du projet
-### 4. Installez la base de données en entrant ***"install"*** dans la barre d'adresse du navigateur (***exemple: localhost/[nom du dossier du projet]/install***)
-### 5. Animez votre blog!
+1. Téléchargez le dépôt officiel du projet [Bitbucket](https://bitbucket.org/eliseekn/bloguistecms) et copiez le dans votre répertoire localhost
+2. Procédez à l'installation du CMS en allant sur ***localhost/bloguistecms/install***
+3. Enjoy it!
 
 ## Contribution
 
-Vous pouvez participer au projet. Les suggestions sont les bienvenues.
+Toute contribution au projet telle qu'elle soit est la bienvenue.
 
 ## Licence
 

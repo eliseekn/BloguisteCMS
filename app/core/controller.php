@@ -12,6 +12,6 @@ class Controller {
 	
 	//redirection de lien
 	public function redirect($location) {
-		header("Location: ".WEB_ROOT."/".$location);
+		header("Location: /".WEB_ROOT."/".$location);
 	}
 }

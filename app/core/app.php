@@ -1,12 +1,10 @@
 <?php
-require_once "config.php";
-
 //classe charger de la redirection des requêtes vers les controlleurs appropriés
 class Application {
 	
 	private $url = [];
-	private $controller = DEFAULT_CONTROLLER;
-	private $action = DEFAULT_ACTION;
+	private $controller = "home"; //controlleur par défaut
+	private $action = "index";
 	private $params = [];
 	
 	public function __construct() {

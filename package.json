@@ -1,6 +1,6 @@
 {
   "name": "BloguisteCMS",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Un CMS basé sur un framework PHP pour la création de blog",
   "main": "gulpfile.js",
   "scripts": {

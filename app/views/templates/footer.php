@@ -35,5 +35,6 @@
 		<p>Powered by <a href="https://bitbucket.org/eliseekn/bloguistecms#readme" target="_blank">BloguisteCMS</a></p>
 	</footer>
 	
+	<script type="text/javascript" src="public/assets/js/dist/script.min.js"></script>
 	</body>
 </html>

@@ -8,7 +8,7 @@ class Database {
 		
 	//connexion à la base de données
 	public function __construct($db_name = "") {
-		//connexion à unlae base de donnée existante
+		//connexion à une base de donnée existante
 		if (empty($db_name)) {
 			$this->connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
 		} else {

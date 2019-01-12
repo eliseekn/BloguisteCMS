@@ -6,10 +6,10 @@
 	<head>
 		<title><?=$this->view_data['title']?></title>
 		
-		<base href="<?=WEB_ROOT."/"?>">
+		<base href="<?="/". WEB_ROOT."/"?>">
 		
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,inital-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 	</head>
 	
 	<body>
