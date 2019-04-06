@@ -23,7 +23,7 @@
 
 ## Installation
 
-1. Téléchargez le dépôt officiel du projet [Bitbucket](https://bitbucket.org/eliseekn/bloguistecms) et copiez le dans votre répertoire localhost
+1. Téléchargez le dépôt officiel du projet [Github](https://github.com/eliseekn/BloguisteCMS/) et copiez le dans votre répertoire localhost
 2. Procédez à l'installation du CMS en allant sur ***localhost/bloguistecms/install***
 3. Enjoy it!
 
