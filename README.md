@@ -17,14 +17,14 @@
 ## Fonctionnalités
 
 - Panel d'administration
-- Custom PHP framework
+- Un PHP framework simple d'utilisation
 - w3css
 - jQuery
 
 ## Installation
 
-1. Téléchargez le dépôt officiel du projet [Github](https://github.com/eliseekn/BloguisteCMS/) et copiez le dans votre répertoire localhost
-2. Procédez à l'installation du CMS en allant sur ***localhost/bloguistecms/install***
+1. Téléchargez le dépôt du projet [Github](https://github.com/eliseekn/BloguisteCMS/) et copiez le dans votre répertoire localhost
+2. Procédez à l'installation du CMS en allant sur ***localhost/bloguistecms***
 3. Enjoy it!
 
 ## Contribution
