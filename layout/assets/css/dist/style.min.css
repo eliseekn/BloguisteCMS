@@ -1,0 +1,7 @@
+.menu_bar a{text-decoration:none}.menu_bar a:hover{text-decoration:underline white}
+li{list-style-type:none;text-align:center;margin-right:50px}li a{text-decoration:none}
+li a:hover{text-decoration:underline}input,textarea,.w3-tag,.w3-button,.w3-card{border-radius:12px;resize:none}
+footer .fab{font-size:20px;color:#607d8b;cursor:pointer}.w3-button:hover{background-color:#607d8b !important;color:white !important}
+.w3-tag{background-color:#607d8b}.ck-editor__editable{min-height:300px}.error_msg{background-color:#792020}
+.underline{text-decoration:underline white}@media(max-width:481px){body{margin-top:50px}
+.ck-editor__editable{min-height:100px}}
